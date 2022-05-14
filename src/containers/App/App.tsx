@@ -1,8 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FunctionComponent } from 'react';
+import logo from '../../assets/logo.svg';
 
-function App() {
+import { AsteroidBanner } from '../../component';
+import './App.scss';
+
+interface AppProps {}
+
+const App: FunctionComponent<AppProps> = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -19,8 +23,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <div className="position-relative">
+        <AsteroidBanner props={'hello-world'} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
