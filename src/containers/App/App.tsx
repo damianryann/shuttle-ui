@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import logo from '../../assets/logo.svg';
 
-import { AsteroidBanner } from '../../component';
+import { AsteroidBanner } from '../../components';
 import './App.scss';
 
 interface AppProps {}
