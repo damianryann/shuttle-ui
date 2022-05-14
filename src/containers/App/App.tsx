@@ -7,6 +7,9 @@ import './App.scss';
 interface AppProps {}
 
 const App: FunctionComponent<AppProps> = () => {
+  const legal =
+    'We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.';
+
   return (
     <div className="App">
       <header className="App-header">
@@ -23,9 +26,12 @@ const App: FunctionComponent<AppProps> = () => {
           Learn React
         </a>
       </header>
-      <div className="position-relative">
-        <AsteroidBanner props={'hello-world'} />
-      </div>
+      <AsteroidBanner
+        title="We use cookies!"
+        legalStatement={legal}
+        readMoreLink="Read More"
+        buttonTitle="Accept All"
+      />
     </div>
   );
 };
