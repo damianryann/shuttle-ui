@@ -16,6 +16,7 @@ interface AsteroidProps {
   backgroundColor?: string;
   textColor?: string;
   buttonTitle?: string;
+  siteName?: string;
 }
 
 const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
@@ -26,16 +27,28 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
   readMoreLink,
   backgroundColor,
   textColor,
-  buttonTitle
+  buttonTitle,
+  siteName
 }) => {
   const [visible, setVisible] = useState(true);
 
   // Accept all cookies
   function acceptAllCookies() {
-    const dateNow = Date.now();
-    const dateExpiry = dateNow + 30;
+    const expiryDate = new Date();
+    expiryDate.setMonth(expiryDate.getMonth() + 12);
 
-    document.cookie = `AsteroidCookie=expires=${dateExpiry}&all=true;`;
+    const cookieName = siteName ?? 'AsteroidCookie';
+
+    const cookieValue = {
+      performance: true,
+      essentials: true,
+      analytics: true,
+      expires: expiryDate.toUTCString()
+    };
+
+    document.cookie = `${cookieName}=${JSON.stringify(
+      cookieValue
+    )};expires=${expiryDate.toUTCString()};path=/`;
     setVisible(false);
   }
 
