@@ -12,6 +12,12 @@ const App: FunctionComponent<AppProps> = () => {
 
   return (
     <div className="App">
+      <AsteroidBanner
+        title="We use cookies!"
+        legalStatement={legal}
+        readMoreLink="Read More"
+        buttonTitle="Accept All"
+      />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -26,12 +32,6 @@ const App: FunctionComponent<AppProps> = () => {
           Learn React
         </a>
       </header>
-      <AsteroidBanner
-        title="We use cookies!"
-        legalStatement={legal}
-        readMoreLink="Read More"
-        buttonTitle="Accept All"
-      />
     </div>
   );
 };

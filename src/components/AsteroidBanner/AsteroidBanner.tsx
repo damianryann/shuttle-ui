@@ -81,7 +81,7 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
   return (
     <div
       id={id ?? undefined}
-      className="asteroid container-fluid position-absolute bottom-0 p-4"
+      className="asteroid container-fluid position-fixed bottom-0 p-4"
       style={bannerStyle}
     >
       <div className="row">
