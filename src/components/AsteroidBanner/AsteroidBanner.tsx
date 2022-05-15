@@ -94,14 +94,14 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
             </a>
           </p>
         </div>
-        <div className="col-sm-12 col-md-2 d-flex align-items-center justify-content-end">
+        <div className="col-sm-12 col-md-2 d-flex flex-column align-items-center justify-content-end">
           <button
-            className="btn btn-lg btn-secondary"
+            className="btn btn-lg btn-secondary w-100"
             onClick={acceptAllCookies}
           >
             {buttonTitle}
           </button>
-          <button className="btn btn-lg btn-outline-secondary ms-2">
+          <button className="btn btn-lg btn-outline-secondary mt-2 w-100">
             Reject
           </button>
         </div>
