@@ -33,16 +33,16 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
   const [visible, setVisible] = useState(true);
 
   // Accept all cookies
-  function acceptAllCookies() {
+  function acceptCookies(choice: boolean) {
     const expiryDate = new Date();
-    expiryDate.setMonth(expiryDate.getMonth() + 12);
+    expiryDate.setMonth(expiryDate.getMonth() + (choice ? 12 : 1));
 
     const cookieName = `${siteName}Cookie` ?? 'AsteroidCookie';
 
     const cookieValue = {
-      performance: true,
+      performance: choice,
       essentials: true,
-      analytics: true,
+      analytics: choice,
       expires: expiryDate.toUTCString()
     };
 
@@ -99,12 +99,15 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
         <div className="col-sm-12 col-md-2 d-flex flex-column align-items-center justify-content-end">
           <button
             className="btn btn-lg btn-secondary w-100"
-            onClick={acceptAllCookies}
+            onClick={() => acceptCookies(true)}
           >
             {buttonTitle}
           </button>
-          <button className="btn btn-lg btn-outline-secondary mt-2 w-100">
-            Reject All
+          <button
+            className="btn btn-lg btn-outline-secondary mt-2 w-100"
+            onClick={() => acceptCookies(false)}
+          >
+            Reject
           </button>
         </div>
       </div>
