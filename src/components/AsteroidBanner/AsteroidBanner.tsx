@@ -7,17 +7,22 @@ import React, {
 
 import './AsteroidBanner.scss';
 
-interface AsteroidProps {
-  id?: string;
-  title: string;
-  legalStatement: string;
-  readmoreText?: string;
-  readMoreLink: string;
-  backgroundColor?: string;
-  textColor?: string;
-  buttonTitle?: string;
-  siteName?: string;
-}
+/**
+ * @component AsteroidBanner
+ *
+ * @description - No description
+ *
+ * @memberof components
+ * @author Damian Ryan <damian@damianryan.co.uk>
+ *
+ * @property {string} id - Optional ID of the cookie banner.
+ * @property {string=} title - Title of the banner.
+ *
+ * @example
+ * return {
+ *   <AsteroidBanner {...props} />
+ * }
+ */
 
 const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
   id,
@@ -32,7 +37,7 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
 }) => {
   const [visible, setVisible] = useState(true);
 
-  // Accept all cookies
+  // Accept/reject all cookies
   function acceptCookies(choice: boolean) {
     const expiryDate = new Date();
     expiryDate.setMonth(expiryDate.getMonth() + (choice ? 12 : 1));
@@ -114,5 +119,18 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
     </div>
   );
 };
+
+export interface AsteroidProps {
+  id?: string;
+  title: string;
+  legalStatement: string;
+  readmoreText?: string;
+  readMoreLink: string;
+  backgroundColor?: string;
+  textColor?: string;
+  buttonTitle?: string;
+  siteName?: string;
+  style?: CSSProperties;
+}
 
 export default AsteroidBanner;

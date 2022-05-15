@@ -16,7 +16,7 @@ const App: FunctionComponent<AppProps> = () => {
       <AsteroidBanner
         title="We use cookies!"
         legalStatement={legal}
-        readMoreLink="Read More"
+        readMoreLink="/privacy-policy"
         buttonTitle="Accept All"
         siteName={site}
       />
