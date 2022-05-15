@@ -10,6 +10,7 @@ const App: FunctionComponent<AppProps> = () => {
   const legal =
     'We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.';
 
+  const site = 'American Hobbit Pub';
   return (
     <div className="App">
       <AsteroidBanner
@@ -17,6 +18,7 @@ const App: FunctionComponent<AppProps> = () => {
         legalStatement={legal}
         readMoreLink="Read More"
         buttonTitle="Accept All"
+        siteName={site}
       />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

@@ -37,7 +37,7 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
     const expiryDate = new Date();
     expiryDate.setMonth(expiryDate.getMonth() + 12);
 
-    const cookieName = siteName ?? 'AsteroidCookie';
+    const cookieName = `${siteName}Cookie` ?? 'AsteroidCookie';
 
     const cookieValue = {
       performance: true,
@@ -46,7 +46,7 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
       expires: expiryDate.toUTCString()
     };
 
-    document.cookie = `${cookieName}=${JSON.stringify(
+    document.cookie = `${cookieName.replace(/\s/g, '')}=${JSON.stringify(
       cookieValue
     )};expires=${expiryDate.toUTCString()};path=/`;
     setVisible(false);
@@ -66,7 +66,9 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
 
   // Checks on mount if cookie exists before updating state to false.
   useEffect(() => {
-    if (checkCookie('AsteroidCookie')) {
+    const cookieName = `${siteName}Cookie` ?? 'AsteroidCookie';
+
+    if (checkCookie(cookieName.replace(/\s/g, ''))) {
       setVisible(false);
     }
   }, []);
