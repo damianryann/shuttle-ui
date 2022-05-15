@@ -85,7 +85,7 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
       style={bannerStyle}
     >
       <div className="row">
-        <div className="col-sm-12 col-md-10">
+        <div className="col-sm-12 col-md-10 d-flex flex-column justify-content-center">
           <div className="h2 mb-2">{title}</div>
           <p>
             {legalStatement}{' '}
