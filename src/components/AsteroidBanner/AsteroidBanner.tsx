@@ -71,7 +71,7 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
     if (checkCookie(cookieName.replace(/\s/g, ''))) {
       setVisible(false);
     }
-  }, []);
+  }, [siteName]);
 
   // Customise banner style
   const bannerStyle: CSSProperties = {
@@ -89,7 +89,7 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
       <div className="row">
         <div className="col-sm-12 col-md-10 d-flex flex-column justify-content-center">
           <div className="h2 mb-2">{title}</div>
-          <p>
+          <p className="mb-sm-1">
             {legalStatement}{' '}
             <a href={readMoreLink} target="_blank" rel="noreferrer">
               {readmoreText ?? 'Read More'}
@@ -104,7 +104,7 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
             {buttonTitle}
           </button>
           <button className="btn btn-lg btn-outline-secondary mt-2 w-100">
-            Reject
+            Reject All
           </button>
         </div>
       </div>
