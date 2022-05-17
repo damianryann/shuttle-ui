@@ -8,13 +8,19 @@ interface AppProps {}
 
 const App: FunctionComponent<AppProps> = () => {
   const [message, setMessage] = useState(false);
-  const legal =
-    'We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.';
 
-  const site = 'American Hobbit Pub';
+  const props = {
+    site: 'American Hobbit Pub',
+    title: 'We use cookies!',
+    description:
+      'We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.',
+    buttonTitle: 'Accept All',
+    readMoreLink: '/privacy-policy'
+  };
 
   function deleteCookie() {
-    const cookieName = `${site.replace(/\s/g, '')}Cookie` ?? 'AsteroidCookie';
+    const cookieName =
+      `${props.site.replace(/\s/g, '')}Cookie` ?? 'AsteroidCookie';
     document.cookie = `${cookieName}=; Max-Age=0; path=/;`;
 
     setMessage(true);
@@ -23,11 +29,11 @@ const App: FunctionComponent<AppProps> = () => {
   return (
     <div className="App">
       <AsteroidBanner
-        title="We use cookies!"
-        legalStatement={legal}
-        readMoreLink="/privacy-policy"
-        buttonTitle="Accept All"
-        siteName={site}
+        title={props.title}
+        legalStatement={props.description}
+        readMoreLink={props.readMoreLink}
+        buttonTitle={props.buttonTitle}
+        siteName={props.site}
       />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
