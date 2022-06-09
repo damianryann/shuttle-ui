@@ -11,7 +11,7 @@ const App: FunctionComponent<AppProps> = () => {
   const legal =
     'We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.';
 
-  const site = 'American Hobbit Pub';
+  const site = 'Sam Gurungs Consultancy';
 
   function deleteCookie() {
     const cookieName = `${site.replace(/\s/g, '')}Cookie` ?? 'AsteroidCookie';
@@ -23,12 +23,29 @@ const App: FunctionComponent<AppProps> = () => {
   return (
     <div className="App">
       <AsteroidBanner
+        id="id-001"
         title="We use cookies!"
-        legalStatement={legal}
-        readMoreLink="/privacy-policy"
-        buttonTitle="Accept All"
-        siteName={site}
+        cookies={{
+          essential: 'Essential Cookies',
+          functional: 'Functional Cookies',
+          analytics: 'Analytic Cookies',
+          otherCookies: []
+        }}
+        legal={{
+          legalStatement: legal,
+          privacyStatement: '<p>Lorem ipsum</p>'
+        }}
+        buttons={{
+          acceptAll: 'Accept All',
+          rejectAll: 'Reject',
+          manageCookies: 'Manage Cookies',
+          modalSave: 'Save Changes',
+          modalClose: 'Close',
+          readMore: 'Read More',
+          readMoreHref: '/privacy-policy'
+        }}
       />
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Check out the cookie banner!</p>
