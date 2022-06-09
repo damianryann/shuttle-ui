@@ -48,8 +48,6 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
     acceptAll,
     rejectAll,
     manageCookies,
-    modalSave,
-    modalClose,
     readMore,
     readMoreHref
   } = buttons;
