@@ -1,7 +1,7 @@
 export function checkCookie(cookieName: string) {
   if (!cookieName && cookieName !== undefined) return null;
   cookieName = encodeURIComponent(cookieName).replace(
-    /[.*+?^=!:${}()|[\]\/\\]/g,
+    /[.*+?^=!:${}()|[\]/\\]/g,
     '\\$&'
   ); //escape regexp characters
   const rxp = new RegExp(`(?:^|;)\\s*${cookieName}=([^;]*)`);
