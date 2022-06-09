@@ -4,7 +4,6 @@ export function acceptCookies(
   siteName: string | undefined,
   setVisible: Function
 ) {
- 
   const expiryDate = new Date();
   expiryDate.setMonth(expiryDate.getMonth() + 12);
 
@@ -19,7 +18,10 @@ export function acceptCookies(
     expires: expiryDate.toUTCString()
   };
 
-  document.cookie = `${cookieName.replace(/\s/g, '')}=${JSON.stringify(
+  document.cookie = `${cookieName.replace(
+    /\s/g,
+    ''
+  )}=${JSON.stringify(
     cookieValue
   )};expires=${expiryDate.toUTCString()};path=/`;
   setVisible(false);
@@ -43,7 +45,10 @@ export function rejectCookies(
     expires: expiryDate.toUTCString()
   };
 
-  document.cookie = `${cookieName.replace(/\s/g, '')}=${JSON.stringify(
+  document.cookie = `${cookieName.replace(
+    /\s/g,
+    ''
+  )}=${JSON.stringify(
     cookieValue
   )};expires=${expiryDate.toUTCString()};path=/`;
   setVisible(false);

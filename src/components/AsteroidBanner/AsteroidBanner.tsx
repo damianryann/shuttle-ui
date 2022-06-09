@@ -6,7 +6,10 @@ import React, {
   useEffect
 } from 'react';
 
-import { acceptCookies, rejectCookies } from './utilities/acceptCookies';
+import {
+  acceptCookies,
+  rejectCookies
+} from './utilities/acceptCookies';
 import { checkCookie } from './utilities/checkCookie';
 
 import './AsteroidBanner.scss';
@@ -23,6 +26,24 @@ import Modal from './modal/Modal';
  * @property {string=} id - Optional ID of the cookie banner.
  * @property {string} title - Title of the banner.
  * @property {string=} siteName - Name of the website managed by the cookie banner.
+ * @property {object} cookies - Cookie options object.
+ * @property {string} cookies.essential - Essential cookie text.
+ * @property {string} cookies.functional - Functional cookie text.
+ * @property {string} cookies.analytics - Analytics cookie text.
+ * @property {array=} cookies.otherCookies - Optional additional cookies array [NOT USED YET].
+ * @property {object} legal - Legal options object.
+ * @property {string} legal.legalStatement - Legal statement paragraph for main banner.
+ * @property {string} legal.privacyStatement - Full privacy policy paragraph for modal.
+ * @property {object} button - Button options object.
+ * @property {string} button.acceptAll - Accept all button text.
+ * @property {string} button.rejectAll - Reject all button text.
+ * @property {string} button.manageCookies - Manage Cookies button text.
+ * @property {string} button.modalSave - Save button text for modal.
+ * @property {string} button.modalClose - Close button text for modal.
+ * @property {string} button.readMore - Read more link text.
+ * @property {string} button.readMoreHref - Read more link url / path.
+ * @property {string=} backgroundColor - Override background color for banner using Hexadecimal code, RGB or description.
+ * @property {string=} textColor - Override text color for banner using Hexadecimal code, RGB or description.
  *
  * @example
  * return {
@@ -33,12 +54,12 @@ import Modal from './modal/Modal';
 const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
   id,
   title,
+  siteName,
   cookies,
   buttons,
   legal,
   backgroundColor,
-  textColor,
-  siteName
+  textColor
 }) => {
   const [visible, setVisible] = useState(true);
   const [modal, openModal] = useState(false);
@@ -94,7 +115,11 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
               <div className="h2 mb-2">{title}</div>
               <p className="mb-2 mb-sm-2">
                 {legalStatement}{' '}
-                <a href={readMoreHref} target="_blank" rel="noreferrer">
+                <a
+                  href={readMoreHref}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {readMore ?? 'Read More'}
                 </a>
               </p>
@@ -102,7 +127,9 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
             <div className="col-sm-12 col-md-2 d-flex flex-column align-items-center justify-content-center">
               <button
                 className="btn btn-secondary w-100"
-                onClick={() => acceptCookies(true, true, siteName, setVisible)}
+                onClick={() =>
+                  acceptCookies(true, true, siteName, setVisible)
+                }
               >
                 {acceptAll}
               </button>

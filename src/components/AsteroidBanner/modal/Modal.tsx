@@ -1,19 +1,20 @@
 import React, { FunctionComponent } from 'react';
-import { ButtonTypes, CookiesTypes, LegalTypes } from '../AsteroidBanner';
+import {
+  ButtonTypes,
+  CookiesTypes,
+  LegalTypes
+} from '../AsteroidBanner';
 
 import '../AsteroidBanner.scss';
 
 /**
  * @component Modal
  *
- * @description - No description
+ * @description - Modal popup for manage cookies option of banner. Provides granular choice of cookie consent.
  *
- * @memberof components
+ * @memberof AsteroidBanner
  * @author Damian Ryan <damian@damianryan.co.uk>
- *
- * @property {string=} id - Optional ID of the cookie banner.
- * @property {string=} siteName - Name of the website managed by the cookie banner.
- *
+
  * @example
  * return {
  *   <Modal {...props} />
@@ -38,7 +39,9 @@ const Modal: FunctionComponent<ModalProps> = ({
     <div
       className={open ? 'modal fade show' : 'modal fade'}
       id={id ? `${id}-modal` : undefined}
-      aria-labelledby={id ? `${id}-modal-label` : 'shuttle-modal-label'}
+      aria-labelledby={
+        id ? `${id}-modal-label` : 'shuttle-modal-label'
+      }
       aria-hidden="true"
     >
       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable mw-800-px">
@@ -63,7 +66,9 @@ const Modal: FunctionComponent<ModalProps> = ({
                   >
                     <div
                       className="mb-2"
-                      dangerouslySetInnerHTML={{ __html: privacyStatement }}
+                      dangerouslySetInnerHTML={{
+                        __html: privacyStatement
+                      }}
                     />
                     <div className="row">
                       <div className="col-md-4">

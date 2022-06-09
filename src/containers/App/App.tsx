@@ -14,7 +14,8 @@ const App: FunctionComponent<AppProps> = () => {
     'We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.';
 
   function deleteCookie() {
-    const cookieName = `${site.replace(/\s/g, '')}Cookie` ?? 'AsteroidCookie';
+    const cookieName =
+      `${site.replace(/\s/g, '')}Cookie` ?? 'AsteroidCookie';
     document.cookie = `${cookieName}=; Max-Age=0; path=/;`;
 
     setMessage(true);
@@ -50,7 +51,10 @@ const App: FunctionComponent<AppProps> = () => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Check out the cookie banner!</p>
-        <button className="btn btn-lg btn-outline-light" onClick={deleteCookie}>
+        <button
+          className="btn btn-lg btn-outline-light"
+          onClick={deleteCookie}
+        >
           Delete cookie
         </button>
         {message && (
