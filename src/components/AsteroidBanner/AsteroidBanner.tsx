@@ -44,6 +44,7 @@ import Modal from './modal/Modal';
  * @property {string} button.readMoreHref - Read more link url / path.
  * @property {string=} backgroundColor - Override background color for banner using Hexadecimal code, RGB or description.
  * @property {string=} textColor - Override text color for banner using Hexadecimal code, RGB or description.
+ * @property {CSSProperties} style - CSS Properties for inline customization.
  *
  * @example
  * return {
