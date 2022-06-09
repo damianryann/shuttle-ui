@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Asteroid Cookie Banner
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -37,6 +37,7 @@ To use this component you must use it in the following way:
     <AsteroidBanner
         id="id-001"
         title="We use cookies!"
+        siteName="Ad Astra Labs"
         cookies={{
           essential: 'Essential Cookies',
           functional: 'Functional Cookies',
@@ -44,7 +45,7 @@ To use this component you must use it in the following way:
           otherCookies: []
         }}
         legal={{
-          legalStatement: legal,
+          legalStatement: 'Lorem ipsum',
           privacyStatement: '<p>Lorem ipsum</p>'
         }}
         buttons={{

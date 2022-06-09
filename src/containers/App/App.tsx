@@ -8,10 +8,10 @@ interface AppProps {}
 
 const App: FunctionComponent<AppProps> = () => {
   const [message, setMessage] = useState(false);
-  const legal =
-    'We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.';
 
   const site = 'Sam Gurungs Consultancy';
+  const legal =
+    'We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.';
 
   function deleteCookie() {
     const cookieName = `${site.replace(/\s/g, '')}Cookie` ?? 'AsteroidCookie';
@@ -25,6 +25,7 @@ const App: FunctionComponent<AppProps> = () => {
       <AsteroidBanner
         id="id-001"
         title="We use cookies!"
+        siteName={site}
         cookies={{
           essential: 'Essential Cookies',
           functional: 'Functional Cookies',
