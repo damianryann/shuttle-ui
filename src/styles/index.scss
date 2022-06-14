@@ -69,6 +69,12 @@ $utilities: map-merge(
 // Utilities
 @import '~bootstrap/scss/utilities/api';
 
+@for $index from 1 through 6 {
+  h#{$index} {
+    color: $primary;
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',

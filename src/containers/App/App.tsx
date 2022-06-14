@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import logo from '../../assets/logo.svg';
 
-import { AsteroidBanner } from '../../components';
+import { AsteroidBanner, Logo } from '../../components';
 
 import cookieData from '../../utilities/cookieBanner.json';
 
@@ -14,12 +13,13 @@ const App: FunctionComponent<AppProps> = () => {
     <div className="App">
       <AsteroidBanner
         {...cookieData}
-        style={{ borderTop: '2px solid #000' }}
+        style={{ borderTop: '2px solid #707070' }}
       />
 
       <header className="App-header bg-white text-secondary">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Megan Allen Fit</p>
+        <div className="App-logo mt-4" aria-label="Megan Allen Fit">
+          <Logo />
+        </div>
       </header>
     </div>
   );
