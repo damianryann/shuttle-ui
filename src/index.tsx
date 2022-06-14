@@ -4,6 +4,8 @@ import './styles/index.scss';
 import { App } from './containers';
 import reportWebVitals from './reportWebVitals';
 
+export const site = 'Megan Allen Fit';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

@@ -2,7 +2,8 @@ import React, { FunctionComponent } from 'react';
 import {
   ButtonTypes,
   CookiesTypes,
-  LegalTypes
+  LegalTypes,
+  OtherCookies
 } from '../AsteroidBanner';
 
 import '../AsteroidBanner.scss';
@@ -31,28 +32,29 @@ const Modal: FunctionComponent<ModalProps> = ({
   legal
 }) => {
   // Importing cookies, buttons and legal
-  const { essential, functional, analytics } = cookies;
+  const { essential, functional, analytics, otherCookies } = cookies;
   const { privacyStatement } = legal;
   const { modalSave, modalClose } = buttons;
+  const cookieName = `${siteName}Cookie` ?? 'AsteroidCookie';
 
   return (
     <div
       className={open ? 'modal fade show' : 'modal fade'}
       id={id ? `${id}-modal` : undefined}
       aria-labelledby={
-        id ? `${id}-modal-label` : 'shuttle-modal-label'
+        id ? `${id}-modal-label` : 'asteroid-modal-label'
       }
       aria-hidden="true"
     >
       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable mw-800-px">
         <div className="modal-content">
           <div className="modal-header">
-            <h5
-              className="modal-title"
-              id={id ? `${id}-modal-label` : 'shuttle-modal-label'}
+            <h2
+              className="modal-title fs-5"
+              id={id ? `${id}-modal-label` : 'asteroid-modal-label'}
             >
               {siteName ?? 'Manage Cookies'}
-            </h5>
+            </h2>
           </div>
           <div className="modal-body">
             <div className="row">
@@ -70,11 +72,24 @@ const Modal: FunctionComponent<ModalProps> = ({
                         __html: privacyStatement
                       }}
                     />
+                    <hr />
                     <div className="row">
-                      <div className="col-md-4">
-                        <h2 className="fs-5">{essential}</h2>
+                      <div className="col-9 col-xs-10 col-sm-10 col-md-11 pe-1">
+                        <button
+                          className="btn btn-link mb-2 w-100"
+                          type="button"
+                        >
+                          <h3 className="text-start fs-6 m-0">
+                            <span className="float-start me-1">
+                              +
+                            </span>
+                            {essential}
+                          </h3>
+                        </button>
+                      </div>
+                      <div className="col-3 col-xs-2 col-sm-2 col-md-1 ps-1 d-flex justify-content-end align-items-center">
                         <label
-                          className="switch"
+                          className="switch text-end mb-2"
                           htmlFor="essential-cookies-toggle"
                           aria-label="Essential Cookies always toggled true."
                         >
@@ -88,12 +103,101 @@ const Modal: FunctionComponent<ModalProps> = ({
                           <span className="slider" />
                         </label>
                       </div>
-                      <div className="col-md-4">
-                        <h2 className="fs-5">{functional}</h2>
+                      <div className="col-12 col-xs-10 col-sm-10 col-md-11 pe-1">
+                        <div
+                          className="collapse"
+                          id="collapseExample"
+                        >
+                          <div className="card card-body card-bg border-0 mb-2">
+                            <div className="row small">
+                              <div className="fw-bold col-xs-3 col-md-2">
+                                Name:
+                              </div>
+                              <div className="col-xs-9 col-md-10">
+                                <p>{cookieName.replace(/\s/g, '')}</p>
+                              </div>
+                              <div className="fw-bold col-xs-3 col-md-2">
+                                Duration:
+                              </div>
+                              <div className="col-xs-9 col-md-10">
+                                <p>1 year</p>
+                              </div>
+                              <div className="fw-bold col-xs-3 col-md-2">
+                                Description:
+                              </div>
+                              <div className="col-xs-9 col-md-10">
+                                <p>
+                                  This cookie!{' '}
+                                  {cookieName.replace(/\s/g, '')} is
+                                  required to ensure your preferences
+                                  are stored so we can make sure you
+                                  don't get anything you didn't want.
+                                </p>
+                              </div>
+                            </div>
+
+                            {otherCookies.map(
+                              (cookieData: OtherCookies, index) => {
+                                const {
+                                  name,
+                                  duration,
+                                  description,
+                                  type
+                                } = cookieData;
+
+                                console.log(type);
+                                return (
+                                  <div
+                                    key={index}
+                                    className="row small"
+                                  >
+                                    <hr />
+                                    <div className="fw-bold col-xs-3 col-md-2">
+                                      Name:
+                                    </div>
+                                    <div className="col-xs-9 col-md-10">
+                                      <p>{name}</p>
+                                    </div>
+                                    <div className="fw-bold col-xs-3 col-md-2">
+                                      Duration:
+                                    </div>
+                                    <div className="col-xs-9 col-md-10">
+                                      <p>{duration}</p>
+                                    </div>
+                                    <div className="fw-bold col-xs-3 col-md-2">
+                                      Description:
+                                    </div>
+                                    <div className="col-xs-9 col-md-10">
+                                      <p>{description}</p>
+                                    </div>
+                                  </div>
+                                );
+                              }
+                            ) ?? 'No cookie'}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div className="row">
+                      <div className="col-9 col-xs-10 col-sm-10 col-md-11 pe-1">
+                        <button
+                          className="btn btn-link mb-2 w-100"
+                          type="button"
+                        >
+                          <h3 className="text-start fs-6 m-0">
+                            <span className="float-start me-1">
+                              +
+                            </span>
+                            {functional}
+                          </h3>
+                        </button>
+                      </div>
+                      <div className="col-3 col-xs-2 col-sm-2 col-md-1 ps-1 d-flex justify-content-end align-items-center">
                         <label
-                          className="switch"
+                          className="switch text-end mb-2"
                           htmlFor="functional-cookies-toggle"
-                          aria-label="Functional Cookies toggle"
+                          aria-label="Functional Cookies toggle."
                         >
                           <input
                             id="functional-cookies-toggle"
@@ -103,12 +207,40 @@ const Modal: FunctionComponent<ModalProps> = ({
                           <span className="slider" />
                         </label>
                       </div>
-                      <div className="col-md-4">
-                        <h2 className="fs-5">{analytics}</h2>
+                      <div className="col-12 col-xs-10 col-sm-10 col-md-11 pe-1">
+                        <div
+                          className="collapse"
+                          id="collapseExample"
+                        >
+                          <div className="card card-body card-bg border-0 mb-2">
+                            Some placeholder content for the collapse
+                            component. This panel is hidden by default
+                            but revealed when the user activates the
+                            relevant trigger.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div className="row">
+                      <div className="col-9 col-xs-10 col-sm-10 col-md-11 pe-1">
+                        <button
+                          className="btn btn-link mb-2 w-100"
+                          type="button"
+                        >
+                          <h3 className="text-start fs-6 m-0">
+                            <span className="float-start me-1">
+                              +
+                            </span>
+                            {analytics}
+                          </h3>
+                        </button>
+                      </div>
+                      <div className="col-3 col-xs-2 col-sm-2 col-md-1 ps-1 d-flex justify-content-end align-items-center">
                         <label
-                          className="switch"
+                          className="switch text-end mb-2"
                           htmlFor="analytics-cookies-toggle"
-                          aria-label="Analytics Cookies toggle"
+                          aria-label="Analytics Cookies toggle."
                         >
                           <input
                             id="analytics-cookies-toggle"
@@ -118,7 +250,21 @@ const Modal: FunctionComponent<ModalProps> = ({
                           <span className="slider" />
                         </label>
                       </div>
+                      <div className="col-12 col-xs-10 col-sm-10 col-md-11 pe-1">
+                        <div
+                          className="collapse"
+                          id="collapseExample"
+                        >
+                          <div className="card card-body card-bg border-0 mb-2">
+                            Some placeholder content for the collapse
+                            component. This panel is hidden by default
+                            but revealed when the user activates the
+                            relevant trigger.
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                    <hr />
                   </div>
                 </div>
               </div>
@@ -127,13 +273,13 @@ const Modal: FunctionComponent<ModalProps> = ({
           <div className="modal-footer">
             <button
               type="button"
-              className="btn btn-outline-secondary"
+              className="btn btn-outline-primary"
               data-bs-dismiss="modal"
               onClick={() => openModal(false)}
             >
               {modalClose}
             </button>
-            <button type="button" className="btn btn-secondary">
+            <button type="button" className="btn btn-primary">
               {modalSave}
             </button>
           </div>
@@ -151,6 +297,7 @@ export interface ModalProps {
   cookies: CookiesTypes;
   legal: LegalTypes;
   buttons: ButtonTypes;
+  children?: JSX.Element | JSX.Element[];
 }
 
 export default Modal;

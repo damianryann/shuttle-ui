@@ -1,0 +1,24 @@
+{
+    "id": "id-001",
+    "title": "We use cookies!",
+    "siteName": "",
+    "cookies": {
+        "essential": "Essential Cookies",
+        "functional": "Functional Cookie",
+        "analytics": "Analytic Cookies",
+        "otherCookies": []
+    },
+    "legal": {
+        "legalStatement": "We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies.",
+        "privacyStatement": "<p>Lorem ipsum</p>"
+    },
+    "buttons": {
+        "acceptAll": "Accept All",
+        "rejectAll": "Reject",
+        "manageCookies": "Manage Cookies",
+        "modalSave": "Save Changes",
+        "modalClose": "Close",
+        "readMore": "Read More",
+        "readMoreHref": "/privacy-policy"
+    }
+}
