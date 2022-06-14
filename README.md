@@ -1,4 +1,4 @@
-# Asteroid Cookie Banner
+# Megan Allen Fit
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -28,37 +28,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### How do I use this component
-
-To use this component you must use it in the following way:
-
-```
-    <AsteroidBanner
-        id="id-001"
-        title="We use cookies!"
-        siteName="Ad Astra Labs"
-        cookies={{
-          essential: 'Essential Cookies',
-          functional: 'Functional Cookies',
-          analytics: 'Analytic Cookies',
-          otherCookies: []
-        }}
-        legal={{
-          legalStatement: 'Lorem ipsum',
-          privacyStatement: '<p>Lorem ipsum</p>'
-        }}
-        buttons={{
-          acceptAll: 'Accept All',
-          rejectAll: 'Reject',
-          manageCookies: 'Manage Cookies',
-          modalSave: 'Save Changes',
-          modalClose: 'Close',
-          readMore: 'Read More',
-          readMoreHref: '/privacy-policy'
-        }}
-    />
-```
 
 ## Learn More
 

@@ -213,10 +213,7 @@ const Modal: FunctionComponent<ModalProps> = ({
                           id="collapseExample"
                         >
                           <div className="card card-body card-bg border-0 mb-2">
-                            Some placeholder content for the collapse
-                            component. This panel is hidden by default
-                            but revealed when the user activates the
-                            relevant trigger.
+                            No functional cookies
                           </div>
                         </div>
                       </div>
@@ -256,10 +253,7 @@ const Modal: FunctionComponent<ModalProps> = ({
                           id="collapseExample"
                         >
                           <div className="card card-body card-bg border-0 mb-2">
-                            Some placeholder content for the collapse
-                            component. This panel is hidden by default
-                            but revealed when the user activates the
-                            relevant trigger.
+                            No analytic cookies.
                           </div>
                         </div>
                       </div>

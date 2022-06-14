@@ -60,7 +60,8 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
   buttons,
   legal,
   backgroundColor,
-  textColor
+  textColor,
+  style
 }) => {
   const [visible, setVisible] = useState(true);
   const [modal, openModal] = useState(false);
@@ -90,7 +91,8 @@ const AsteroidBanner: FunctionComponent<AsteroidProps> = ({
   const bannerStyle: CSSProperties = {
     color: textColor ?? '#000',
     backgroundColor: backgroundColor ?? '#fff',
-    visibility: visible ? 'visible' : 'hidden'
+    visibility: visible ? 'visible' : 'hidden',
+    ...style
   };
 
   const modalProps = {
