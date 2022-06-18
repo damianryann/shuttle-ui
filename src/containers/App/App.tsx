@@ -1,8 +1,6 @@
 import React, { FunctionComponent, Fragment } from 'react';
 
-import Slide from 'react-reveal/Slide';
-
-import { AsteroidBanner, Logo } from '../../components';
+import { AsteroidBanner, Header } from '../../components';
 
 import cookieData from '../../utilities/cookieBanner.json';
 
@@ -14,21 +12,12 @@ const App: FunctionComponent<AppProps> = () => {
   return (
     <Fragment>
       <div className="App">
-        <Slide top>
-          <header className="App-header bg-white text-secondary position-sticky top-0 shadow-sm">
-            <div
-              className="App-logo mt-4"
-              aria-label="Megan Allen Fit"
-            >
-              <Logo />
-            </div>
-          </header>
-        </Slide>
-        <section>
+        <Header />
+        <section className="container-fluid">
           <div className="container">
             <div className="row py-3">
-              <div className="col-xs-12 col-sm-12 col-md-12">
-                <h1>Fitness first!</h1>
+              <div className="col-xs-12 col-sm-12 col-md-6">
+                <h1 id="FitnessFirst">Fitness first!</h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing
                   elit. Nulla mollis, massa sed varius eleifend,
@@ -94,6 +83,17 @@ const App: FunctionComponent<AppProps> = () => {
                   tempor id vulputate vitae, varius at lectus. Nulla
                   facilisi.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="container-fluid text-white bg-primary">
+          <div className="container">
+            <div className="row py-4">
+              <div className="col-xs-12 col-sm-12 col-md-12">
+                <h2 id="SecondFitness" className="text-white">
+                  Second fitness!
+                </h2>
                 <p>
                   Pellentesque volutpat, sem quis egestas feugiat,
                   purus justo mollis justo, et tincidunt purus nisl
