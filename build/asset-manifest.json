@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/asteroid/static/css/main.fd92131e.css",
-    "main.js": "/asteroid/static/js/main.01fc965c.js",
-    "static/js/787.1dc929e3.chunk.js": "/asteroid/static/js/787.1dc929e3.chunk.js",
-    "static/media/logo.svg": "/asteroid/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/asteroid/index.html",
-    "main.fd92131e.css.map": "/asteroid/static/css/main.fd92131e.css.map",
-    "main.01fc965c.js.map": "/asteroid/static/js/main.01fc965c.js.map",
-    "787.1dc929e3.chunk.js.map": "/asteroid/static/js/787.1dc929e3.chunk.js.map"
+    "main.css": "./static/css/main.770dc254.css",
+    "main.js": "./static/js/main.9ad0a73e.js",
+    "static/js/787.b0c449c5.chunk.js": "./static/js/787.b0c449c5.chunk.js",
+    "static/media/bootstrap-icons.woff?": "./static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
+    "static/media/bootstrap-icons.woff2?": "./static/media/bootstrap-icons.b2e5aab643c6f0fd2da6.woff2",
+    "index.html": "./index.html",
+    "main.770dc254.css.map": "./static/css/main.770dc254.css.map",
+    "main.9ad0a73e.js.map": "./static/js/main.9ad0a73e.js.map",
+    "787.b0c449c5.chunk.js.map": "./static/js/787.b0c449c5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd92131e.css",
-    "static/js/main.01fc965c.js"
+    "static/css/main.770dc254.css",
+    "static/js/main.9ad0a73e.js"
   ]
 }
