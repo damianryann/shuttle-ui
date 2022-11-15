@@ -9,6 +9,7 @@
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
+@import "~bootstrap/scss/maps";
 @import '~bootstrap/scss/utilities';
 @import '~bootstrap/scss/helpers';
 @import '~bootstrap/scss/utilities/api';
@@ -194,10 +195,10 @@ h3 span {
     color: var(--first-color-light);
     margin-bottom: 1.5rem;
     transition: 0.3s;
-  }
 
-  .nav-link:hover {
-    color: var(--white-color);
+    &:hover {
+      color: var(--white-color);
+    }
   }
 
   .nav-icon {
