@@ -1,54 +1,40 @@
 import React, { FunctionComponent, useState } from 'react';
-import logo from '../../assets/logo.svg';
+import classNames from 'clsx';
 
-import { AsteroidBanner } from '../../components';
+import { Navigation } from '../../elements';
+
 import './App.scss';
 
-interface AppProps {}
-
-const App: FunctionComponent<AppProps> = () => {
-  const [message, setMessage] = useState(false);
-
-  const props = {
-    site: 'American Hobbit Pub',
-    title: 'We use cookies!',
-    description:
-      'We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.',
-    buttonTitle: 'Accept All',
-    readMoreLink: '/privacy-policy'
-  };
-
-  function deleteCookie() {
-    const cookieName =
-      `${props.site.replace(/\s/g, '')}Cookie` ?? 'AsteroidCookie';
-    document.cookie = `${cookieName}=; Max-Age=0; path=/;`;
-
-    setMessage(true);
-  }
+const App: FunctionComponent<AppProps> = data => {
+  const [toggle, setToggle] = useState<boolean>(false);
 
   return (
-    <div className="App">
-      <AsteroidBanner
-        title={props.title}
-        legalStatement={props.description}
-        readMoreLink={props.readMoreLink}
-        buttonTitle={props.buttonTitle}
-        siteName={props.site}
+    <div
+      className={`body ${toggle ? 'body-pd' : undefined}`}
+      id="body-pd"
+    >
+      <Navigation
+        toggle={toggle}
+        setToggle={setToggle}
+        configuration={data}
       />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Check out the cookie banner!</p>
-        <button className="btn btn-lg btn-outline-light" onClick={deleteCookie}>
-          Delete cookie
-        </button>
-        {message && (
-          <div className="alert alert-success fs-5 mt-3" role="alert">
-            Please refresh the page!
-          </div>
-        )}
-      </header>
+      <div
+        className={classNames({
+          'vh-h-100': true
+        })}
+      >
+        <h1>Main Components</h1>
+      </div>
     </div>
   );
 };
+
+export interface AppConfig {
+  site: string;
+}
+
+export interface AppProps {
+  data: AppConfig;
+}
 
 export default App;
