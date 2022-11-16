@@ -1,27 +1,29 @@
 import React, { FunctionComponent, Fragment } from 'react';
 
 import classNames from 'clsx';
-import { AppProps } from '../../containers/App/App';
+
+import './Navigation.scss';
 
 const Navigation: FunctionComponent<NavigationProps> = ({
   toggle,
   setToggle,
-  configuration
+  data
 }) => {
-  const { data } = configuration;
-  const { site } = data;
+  const { siteName } = data;
 
   return (
     <Fragment>
       <header
         className={classNames({
           header: true,
-          'body-pd': toggle
+          'body-pd': toggle,
+          'py-2': true
         })}
         id="shuttle-header"
       >
-        <div
-          className="header-toggle"
+        <button
+          type="button"
+          className="btn header-toggle"
           onClick={() => setToggle(!toggle)}
         >
           <i
@@ -29,7 +31,8 @@ const Navigation: FunctionComponent<NavigationProps> = ({
               !toggle ? 'bi-list' : 'bi-x'
             } text-dark fs-2`}
           />
-        </div>
+        </button>
+        <h1>Page Title</h1>
       </header>
       <div
         className={classNames({
@@ -41,7 +44,7 @@ const Navigation: FunctionComponent<NavigationProps> = ({
         <nav className="nav">
           <div>
             <a href="/#" className="nav-logo">
-              <span className="nav-logo-name">{site}</span>
+              <span className="nav-logo-name">{siteName}</span>
             </a>
             <div className="nav-list">
               <a href="/#" className="nav-link active">
@@ -83,7 +86,7 @@ const Navigation: FunctionComponent<NavigationProps> = ({
 export interface NavigationProps {
   toggle: boolean;
   setToggle: Function;
-  configuration: AppProps;
+  data: any;
 }
 
 export default Navigation;
